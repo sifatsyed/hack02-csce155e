@@ -4,7 +4,7 @@
  * This program calculates the air distance between
  * two locations usding the formulae :
  * d = arccos (sin(ϕ1) sin(ϕ2) + cos(ϕ1) cos(ϕ2) cos(∆)) · R
- 
+ * I just added this line. 
  */
  
  #include<stdlib.h>
