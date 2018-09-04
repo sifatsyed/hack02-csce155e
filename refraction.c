@@ -27,10 +27,13 @@
 	  
 
 	  
-	  if(incidenceAngle>=(-180) && incidenceAngle<=180) {
-		  
-		 if(refractiveIndexMedium > 1) { 
+	  if(incidenceAngle>=(-180) && incidenceAngle<=180) { 
 		 
+		 
+		 if(refractiveIndexMedium > 1) { else 
+		 
+		 { printf("Though theretically possibel, we don't accept indexes < 1\n")
+		 }
 		  incidenceAngleRadians= (incidenceAngle/180.0) * M_PI;
 		 
 		  refractionAngleRadians = asin(((refractiveIndexAir* sin(incidenceAngleRadians))/ refractiveIndexMedium));
@@ -40,12 +43,11 @@
 	  printf("Angle of Incidence: %.2f degrees\n", incidenceAngle);
 	  printf("Index of Refraction: %.3f\n", refractiveIndexMedium);
       printf("Angle of Refraction: %f degrees\n", refractionAngle);
-	 
 	  }	
 	  }
 	  else {
 		  printf("Invalid angle(must be [-180, 180]\n");
-	  }
+	  } 
 	  
 	  return 0; 
 	  

@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
   investmentGrowth = (finalValue/initialValue);
   yearsInverse= (1/numberOfYears);
-  annualizedReturnRate = ((pow(investmentGrowth, yearsInverse)) - 1);
+  annualizedReturnRate = ((pow(investmentGrowth, yearsInverse)) - 1) * 100;
 
   printf("Initial Value:%.2f\n", initialValue);
   printf("Final Value  :%.2f\n", finalValue);

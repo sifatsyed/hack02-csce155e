@@ -13,8 +13,8 @@
 
 int main(int argc, char **argv) {
 
-  double initialValue, numberOfYears, finalValue, annualizedReturnRate,
-  investmentGrowth, yearsInverse;
+  double initialValue, numberOfYears, numberOfWeeks, numberOfDays, finalValue, annualizedReturnRate,
+  investmentGrowth, yearsInverse, weeksInYears, daysInYears, totalYears;
 
   printf("Enter the initial value of investment\n");
   scanf("%lf", &initialValue);
@@ -22,17 +22,29 @@ int main(int argc, char **argv) {
   printf("Enter the final value of investment\n");
   scanf("%lf", &finalValue);
 
-  printf("Enter the number of years\n");
+  printf("Enter the number of years:\n");
   scanf("%lf", &numberOfYears);
+  
+  printf("Enter the number of weeks:\n");
+  scanf("%lf", &numberOfWeeks);
+  
+    weeksInYears = numberOfWeeks/52.1429;
+  
+  printf("Enter the number of days:\n");
+  scanf("%lf", &numberOfDays);
+  
+    daysInYears = numberOfDays/365;
+	
+	  totalYears =  numberOfYears + weeksInYears + daysInYears;
 
   investmentGrowth = (finalValue/initialValue);
-  yearsInverse= (1/numberOfYears);
+  yearsInverse= (1/totalYears);
   annualizedReturnRate = (pow(investmentGrowth, yearsInverse) - 1) * 100;
 
-  printf("Initial Value:%.2f\n", initialValue);
-  printf("Final Value  :%.2f\n", finalValue);
-  printf("Years:  %.2f\n",numberOfYears);
-  printf("Annualized Rate of Return: %f\n", annualizedReturnRate);
+  printf("Initial Value: $%.2f\n", initialValue);
+  printf("Final Value:   $%.2f\n", finalValue);
+  printf("Years:          %.2f\n",totalYears);
+  printf("Annualized Rate of Return: %f%\n", annualizedReturnRate );
 
   return 0;
 
